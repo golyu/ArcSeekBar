@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.lvzhongyi.arcseekbar.MainActivity">
+
+    <com.lvzhongyi.arclib.ArcSeekbarView
+        android:id="@+id/asvTime"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        app:colorNormal="@color/colorPrimaryDark"
+        app:colorPressed="@color/colorAccent"
+        app:level="8"
+        app:srcNormal="@drawable/btn_hover_1"
+        app:srcPressed="@drawable/btn_hover_2">
+
+        <com.lvzhongyi.arclib.ArcView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <com.lvzhongyi.arclib.BallView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </com.lvzhongyi.arclib.ArcSeekbarView>
+
+    <Button
+        android:id="@+id/btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+</RelativeLayout>

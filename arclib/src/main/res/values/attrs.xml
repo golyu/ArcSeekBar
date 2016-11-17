@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <attr name="colorNormal" format="color" />
+    <attr name="colorPressed" format="color" />
+
+    <attr name="srcNormal" format="reference" />
+    <attr name="srcPressed" format="reference" />
+
+    <attr name="level" format="integer"></attr>
+</resources>
