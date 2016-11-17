@@ -51,8 +51,8 @@
 
             <Button
                 android:id="@+id/btn_start"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
                 android:layout_marginTop="15dp"
                 android:background="@drawable/k_switch_off"
                 android:stateListAnimator="@animator/state_list_animator_z" />
@@ -152,7 +152,7 @@
 
     <TextView
         android:layout_width="wrap_content"
-        android:layout_height="60dp" />
+        android:layout_height="20dp" />
 
     <LinearLayout
         android:layout_width="match_parent"

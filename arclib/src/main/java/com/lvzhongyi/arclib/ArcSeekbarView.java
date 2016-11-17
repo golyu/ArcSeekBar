@@ -146,7 +146,7 @@ public class ArcSeekbarView extends ViewGroup implements BallView.OnSmoothScroll
                 Log.v("算出的档次", "" + currentLevel);
                 ballView.smoothScrollLevel((int) currentX,
                         (int) ((widthSize - w) / (level - 1) * currentLevel - (currentX - r)));
-                currentX += (int) ((widthSize - w) / (level - 1) * currentLevel - currentX);
+                currentX += (int) ((widthSize - w) / (level - 1) * currentLevel - (currentX-r));
                 break;
             default:
                 break;
@@ -237,7 +237,7 @@ public class ArcSeekbarView extends ViewGroup implements BallView.OnSmoothScroll
             --currentLevel;
             ballView.smoothScrollLevel((int) currentX,
                     (int) ((widthSize - w) / (level - 1) * currentLevel - (currentX - r)));
-            currentX += (int) ((widthSize - w) / (level - 1) * currentLevel - currentX);
+            currentX += (int) ((widthSize - w) / (level - 1) * currentLevel - (currentX-r));
         }
     }
 
@@ -246,7 +246,7 @@ public class ArcSeekbarView extends ViewGroup implements BallView.OnSmoothScroll
             ++currentLevel;
             ballView.smoothScrollLevel((int) currentX,
                     (int) ((widthSize - w) / (level - 1) * currentLevel - (currentX - r)));
-            currentX += (int) ((widthSize - w) / (level - 1) * currentLevel - currentX);
+            currentX += (int) ((widthSize - w) / (level - 1) * currentLevel - (currentX-r));
         }
     }
 
