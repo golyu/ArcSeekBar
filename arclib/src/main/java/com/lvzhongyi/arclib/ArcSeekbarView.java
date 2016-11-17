@@ -232,6 +232,24 @@ public class ArcSeekbarView extends ViewGroup implements BallView.OnSmoothScroll
         timeTag = System.currentTimeMillis();
     }
 
+    public void subCurrentLevel() {
+        if (currentLevel > 0) {
+            --currentLevel;
+            ballView.smoothScrollLevel((int) currentX,
+                    (int) ((widthSize - w) / (level - 1) * currentLevel - (currentX - r)));
+            currentX += (int) ((widthSize - w) / (level - 1) * currentLevel - currentX);
+        }
+    }
+
+    public void addCurrentLevel() {
+        if ((float) currentLevel < this.level - 1.0F) {
+            ++currentLevel;
+            ballView.smoothScrollLevel((int) currentX,
+                    (int) ((widthSize - w) / (level - 1) * currentLevel - (currentX - r)));
+            currentX += (int) ((widthSize - w) / (level - 1) * currentLevel - currentX);
+        }
+    }
+
     /**
      * 滑动接口
      */
