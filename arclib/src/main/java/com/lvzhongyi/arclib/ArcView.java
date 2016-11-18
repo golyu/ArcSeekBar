@@ -7,6 +7,7 @@ import android.graphics.Paint;
 import android.graphics.Path;
 import android.graphics.PointF;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.View;
 
 /**
@@ -50,15 +51,28 @@ public class ArcView extends View {
         int heightSize = MeasureSpec.getSize(heightMeasureSpec);
         setMeasuredDimension(widthSize, heightSize);//默认占最大
 
-        pStart.set(padding, heightSize - padding);
-        //横着的三角形和竖着的三角形是相似三角形
-        //先求出竖着的三角形的比例关系
-        float jd = (heightSize - padding * 2) / (float) ((heightSize - padding * 2) + (widthSize - padding * 2));
-        //再反求出上面坐标离中线的距离
-        int marginR = (int) (jd * (heightSize / 2 - padding));
-        pCtrl.set(widthSize / 2 - marginR, padding);
+        }
+
+    @Override
+    protected void onLayout(boolean changed, int left, int top, int right, int bottom) {
+        super.onLayout(changed, left, top, right, bottom);
+
+        if (changed) {
+            int width = right-left;
+            int height = bottom-top;
+            pStart.set(padding, height - padding);
+            //横着的三角形和竖着的三角形是相似三角形
+            //先求出竖着的三角形的比例关系
+            float jd = (height - padding * 2) / (float) ((height - padding * 2) + (width - padding * 2));
+            //再反求出上面坐标离中线的距离
+            int marginR = (int) (jd * (height / 2 - padding));
+            pCtrl.set(width / 2 - marginR, padding);
 //        pCtrl.set(padding, padding);
-        pEnd.set(widthSize - padding, padding);
+            pEnd.set(width - padding, padding);
+
+            Log.v("坐标点:", "起始点x:" + pStart.x + " y:" + pStart.y + " 控制点x:" + pCtrl.x + " y:" + pCtrl.y + " 结束点x:" + pEnd.x + " y:" + pEnd.y);
+
+        }
     }
 
     public void setPadding(int padding) {

@@ -8,6 +8,7 @@ import android.util.AttributeSet;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.ViewGroup;
+import android.widget.FrameLayout;
 
 import java.math.BigDecimal;
 
@@ -15,7 +16,7 @@ import java.math.BigDecimal;
  * Created by lvzhongyi on 2016/11/17.
  */
 
-public class ArcSeekbarView extends ViewGroup implements BallView.OnSmoothScrollListener {
+public class ArcSeekbarView extends FrameLayout implements BallView.OnSmoothScrollListener {
     public static final String NAMESPACE = "http://schemas.android.com/apk/res-auto";
 
     private BallView ballView;
