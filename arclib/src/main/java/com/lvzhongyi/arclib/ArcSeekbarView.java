@@ -120,7 +120,7 @@ public class ArcSeekbarView extends FrameLayout implements BallView.OnSmoothScro
             Log.v("parent", left + "-" + top + "-" + right + "-" + bottom + " r:" + r);
             marginLeft = left;
             marginTop = top;
-            arcView.layout(0, 0, right, bottom);
+            arcView.layout(0, 0, right-left, bottom-top);
             moveBall(r);
         }
     }
@@ -147,7 +147,7 @@ public class ArcSeekbarView extends FrameLayout implements BallView.OnSmoothScro
                 Log.v("算出的档次", "" + currentLevel);
                 ballView.smoothScrollLevel((int) currentX,
                         (int) ((widthSize - w) / (level - 1) * currentLevel - (currentX - r)));
-                currentX += (int) ((widthSize - w) / (level - 1) * currentLevel - (currentX-r));
+                currentX += (int) ((widthSize - w) / (level - 1) * currentLevel - (currentX - r));
                 break;
             default:
                 break;
@@ -238,7 +238,7 @@ public class ArcSeekbarView extends FrameLayout implements BallView.OnSmoothScro
             --currentLevel;
             ballView.smoothScrollLevel((int) currentX,
                     (int) ((widthSize - w) / (level - 1) * currentLevel - (currentX - r)));
-            currentX += (int) ((widthSize - w) / (level - 1) * currentLevel - (currentX-r));
+            currentX += (int) ((widthSize - w) / (level - 1) * currentLevel - (currentX - r));
         }
     }
 
@@ -247,7 +247,7 @@ public class ArcSeekbarView extends FrameLayout implements BallView.OnSmoothScro
             ++currentLevel;
             ballView.smoothScrollLevel((int) currentX,
                     (int) ((widthSize - w) / (level - 1) * currentLevel - (currentX - r)));
-            currentX += (int) ((widthSize - w) / (level - 1) * currentLevel - (currentX-r));
+            currentX += (int) ((widthSize - w) / (level - 1) * currentLevel - (currentX - r));
         }
     }
 
