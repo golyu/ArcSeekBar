@@ -66,7 +66,16 @@ public class MainActivity extends AppCompatActivity {
                 asvIntensity.subCurrentLevel();
             }
         });
+        btnStart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                asvIntensity.onOrOff(b);
+                if (b) b = false;
+                else b = true;
+            }
+        });
     }
+
 
 //    @OnClick({R.id.btn_intensity_sub, R.id.btn_intensity_add})
 //    public void onClick(View view) {

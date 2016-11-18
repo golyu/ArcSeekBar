@@ -40,7 +40,7 @@ public class ArcSeekbarView extends ViewGroup implements BallView.OnSmoothScroll
     private int heightSize;
 
     private float level = 6f; // 设置档次
-    private int currentLevel = 1; // 当前档次
+    private int currentLevel = 0; // 当前档次
 
     private int colorNormal = 0;//常规颜色
     private int colorPressed = 0;//按下颜色
